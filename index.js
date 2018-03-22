@@ -28,7 +28,7 @@ function Agent(callback, _opts) {
   // (i.e. it has a callback function) lazily
   this._promisifiedCallback = false;
 
-  let opts = _opts;
+  var opts = _opts;
   if ('function' === typeof callback) {
     this.callback = callback;
   } else if (callback) {
@@ -91,8 +91,8 @@ Agent.prototype.addRequest = function addRequest(req, _opts) {
   req.shouldKeepAlive = false;
 
   // Create the `stream.Duplex` instance
-  let timeout;
-  let timedOut = false;
+  var timeout;
+  var timedOut = false;
   const timeoutMs = this.timeout;
 
   function onerror(err) {
